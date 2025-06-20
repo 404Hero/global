@@ -4,10 +4,6 @@ A clean, responsive multi-page travel website built using **HTML5** and **CSS3**
 
 ---
 
-# 🌍 Global Travel Agency Website
-
-Welcome to the **Global Travel Agency** — a multi-page, fully responsive HTML and CSS website that allows users to explore global destinations, view travel services, and complete booking forms. Built as part of a front-end development course using only **HTML5 and CSS3** (no JavaScript).
-
 ## 🔗 Live Demo
 
 👉 [View the Website on GitHub Pages](https://404Hero.github.io/global/)  
