@@ -1,0 +1,115 @@
+/*================ BOOKING FORM ================*/
+
+.booking-form {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 60px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h3 {
+  text-align: center;
+  color: #355c7d;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #355c7d;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.booking-form button {
+  background-color: #355c7d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.booking-form button:hover {
+  background-color: #5DADEC;
+}
+
+/*================ FORM SWITCHER NAV ================*/
+
+.form-switcher {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 10px;
+  background-color: #f5faff;
+  border-bottom: 2px solid #ddd;
+}
+
+.switch-link {
+  padding: 10px 16px;
+  background-color: #e6f0fa;
+  color: #355c7d;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.switch-link:hover {
+  background-color: #5dadf2;
+  color: white;
+}
+
+.switch-link.active {
+  background-color: #355c7d;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-tags {
+  text-align: center;
+  padding: 30px 10px 10px;
+}
+
+.hotel-tags .tag-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.tag {
+  background-color: #e6f0fa;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 500;
+  color: #355c7d;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
