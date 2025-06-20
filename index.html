@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Pathway - Discover Your Next Adventure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #fff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%2387CEEB;stop-opacity:1" /><stop offset="50%" style="stop-color:%23FFA07A;stop-opacity:1" /><stop offset="100%" style="stop-color:%23FF6347;stop-opacity:1" /></linearGradient></defs><rect width="100%" height="100%" fill="url(%23bg)"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Destinations Section */
+        .destinations {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            height: 200px;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px,
+
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-tag {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .family-discount {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: scale(1.05);
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.05) 20px,
+                rgba(255,255,255,0.05) 40px
+            );
+            animation: rotate 10s linear infinite;
+        }
+
+        .package-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .package-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Booking Section */
+        .booking {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        }
+
+        .booking-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e1e1e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">✈ Global Pathways</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="booking.html">Contact Us!</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Explore breathtaking destinations around the world with our curated travel experiences. Your journey begins here.</p>
+            <a href="#destinations" class="cta-button">Explore Destinations</a>
+        </div>
+    </section>
+
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <h2 class="section-title">Featured Destinations</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="card-image">🗼</div>
+                    <div class="card-content">
+                        <h3>Paris, France</h3>
+                        <p>Experience the city of love with visits to the Eiffel Tower, Louvre Museum, and charming Montmartre district.</p>
+                        <div class="price-tag">From R5,299</div>
+                        <div class="family-discount">15% Family Discount</div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">🏯</div>
+                    <div class="card-content">
+                        <h3>Tokyo, Japan</h3>
+                        <p>Immerse yourself in modern culture and ancient traditions. Visit temples, enjoy sushi, and explore neon-lit streets.</p>
+                        <div class="price-tag">From R6,599</div>
+                        <div class="family-discount">20% Family Discount</div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">🏛</div>
+                    <div class="card-content">
+                        <h3>Santorini, Greece</h3>
+                        <p>Stunning sunsets, white-washed buildings, and crystal-clear waters await you in this Mediterranean paradise.</p>
+                        <div class="price-tag">From R12000</div>
+                        <div class="family-discount">12% Family Discount</div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">🕌</div>
+                    <div class="card-content">
+                        <h3>Dubai, UAE</h3>
+                        <p>Experience luxury and innovation in this desert oasis. Visit Burj Khalifa, luxury malls, and pristine beaches.</p>
+                        <div class="price-tag">From R7,799</div>
+                        <div class="family-discount">18% Family Discount</div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">🌋</div>
+                    <div class="card-content">
+                        <h3>Bali, Indonesia</h3>
+                        <p>Tropical paradise with ancient temples, lush rice terraces, and world-class beaches perfect for relaxation.</p>
+                        <div class="price-tag">From R1099</div>
+                        <div class="family-discount">25% Family Discount</div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">🗽</div>
+                    <div class="card-content">
+                        <h3>New York, USA</h3>
+                        <p>The city that never sleeps offers Broadway shows, world-class museums, and iconic landmarks like Times Square.</p>
+                        <div class="price-tag">From R8,199</div>
+                        <div class="family-discount">10% Family Discount</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="packages" id="packages">
+        <div class="container">
+            <h2 class="section-title">Travel Packages</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>Essential Explorer</h3>
+                    <div class="package-price">R8799</div>
+                    <ul class="package-features">
+                        <li>5 Days / 4 Nights</li>
+                        <li>3-Star Accommodation</li>
+                        <li>Daily Breakfast</li>
+                        <li>Airport Transfers</li>
+                        <li>City Tour Guide</li>
+                    </ul>
+                    <div class="family-discount">10% Off for Families</div>
+                </div>
+
+                <div class="package-card">
+                    <h3>Premium Adventure</h3>
+                    <div class="package-price">R8,299</div>
+                    <ul class="package-features">
+                        <li>7 Days / 6 Nights</li>
+                        <li>4-Star Accommodation</li>
+                        <li>All Meals Included</li>
+                        <li>Private Transportation</li>
+                        <li>Professional Guide</li>
+                        <li>Cultural Activities</li>
+                    </ul>
+                    <div class="family-discount">15% Off for Families</div>
+                </div>
+
+                <div class="package-card">
+                    <h3>Luxury Escape</h3>
+                    <div class="package-price">R9,499</div>
+                    <ul class="package-features">
+                        <li>10 Days / 9 Nights</li>
+                        <li>5-Star Luxury Hotels</li>
+                        <li>Gourmet Dining</li>
+                        <li>Private Jet Transfers</li>
+                        <li>Personal Concierge</li>
+                        <li>Exclusive Experiences</li>
+                        <li>Spa & Wellness</li>
+                    </ul>
+                    <div class="family-discount">20% Off for Families</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Flight</h2>
+            <form class="booking-form" onsubmit="handleBooking(event)">
+                <div class="form-group">
+                    <label for="destination">Choose Destination</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Select a destination</option>
+                        <option value="paris">Paris, France</option>
+                        <option value="tokyo">Tokyo, Japan</option>
+                        <option value="santorini">Santorini, Greece</option>
+                        <option value="dubai">Dubai, UAE</option>
+                        <option value="bali">Bali, Indonesia</option>
+                     iv class="form-group">
+         <label for="departure">Departure Date</label>
+		  <input type="date" id="departure" name="departure" required>
+</div>
+   
+                    
+                
+
+                <div class="form-group">
+                    <label for="package">Select Package</label>
+                    <select id="package" name="package" required>
+                        <option value="">Choose your package</option>
+                        <option value="essential">Essential Explorer - R6799</option>
+                        <option value="premium">Premium Adventure - R7,299</option>
+                        <option value="luxury">Luxury Escape - R8,499</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="travelers">Number of Travels</label>
+					<select id="travelers" name="travels" required>
+					<option>Select travelers</option>
+					<option value="1">1 Adults</option>
+					<option value="2">2 Adults</option>
+					<option value="3">3 Adults</option>
+					<option value 4="4">4+ Adults(family discounts Applied)</option>
+					</select>
+</div>
+<form>
+<div class="form-group">
+         <label for="departure">Departure Date</label>
+		  <input type="date" id="departure" name="departure" required>
+</div>
+
+<div class="form-group">
+         <label for="name">Full Name</label>
+		  <input type="name" id="departure" name="name" placeholder=Enter your full name" required>
+</div>
+<div class="form-group">
+         <label for="email">Email address</label>
+		  <input type="email" id="email" name="email" placeholder=Enter your email" required>
+		 
+</div>
+<div class="form-group">
+         <label for="name">Phone Number</label>
+		  <input type="tel" id="phone" name="phone" placeholder=Enter your phone number" required>
+</div>
+<button type="submit" class="submit-btn">Book Your Adventure Now</button>
+</form>
+
+</div>
+</section>
+
+<footer id="contact">
+<div class="container">
+ <div class=footer-content">
+   <div class="footer-section">
+   <h3>Contact Us</h3>
+   <p> 123 Travel Street, Adventure City, AC 12345</p>
+   <p> +27 888 2227-TRIP</p>
+   <p> hello@globalpathway.com</p>
+   </div>
+   
+   <div class="footer-section">
+   <h3>Quick Links</h3>
+   <p><a href="#destionations">Destinations</a></p>
+   <p><a href="#packages">Travel Packages</a></p>
+   <p><a href="#booking">Book Now</a><p>
+   <p><a href="#">Travel Insurance</a></p>
+   
+ </div>
+<div class="footer-section">
+<h3>About Global Pathway</h3>
+<p>We've been creating unforgettable travel experiences for over 15 years. Our passionis helping you discover the world's most destinations with comfort and style.</p>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2025 Global Pathway Agency. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>

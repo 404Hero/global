@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Flight | GlobalPathways</title>
+  <link rel="stylesheet" href="styles/xstyle.css" />
+  <link rel="stylesheet" href="styles/fstyle.css" />
+</head>
+<style>
+.hero-cruise{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('images/cruisebg1.jpg') center/cover no-repeat;
+  height: 50vh;
+  position: relative;
+  color: rgb(7, 6, 44);
+}
+
+</style>
+<body>
+
+<header class="hero-cruise">
+  <div class="overlay">
+    <h1><a href="#">GlobalPathways Travel Agency</a></h1>
+    <h2>Book Your Cruise</h2>
+  </div>
+</header>
+
+<nav class="navbar">
+  <ul class="nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+    <li><a href="booking.html">Contact Us!</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<div class="form-switcher">
+  <a href="flights.html" class="switch-link">Flights</a>
+  <a href="holidays.html" class="switch-link">Holidays</a>
+  <a href="cruises.html" class="switch-link active">Cruises</a>
+  <a href="insurance.html" class="switch-link">Insurance</a>
+  <a href="favourites.html" class="switch-link">Favourites</a>
+  <a href="hotels.html" class="switch-link">Hotels</a>
+</div>
+
+
+<section class="booking-form">
+  <h3>Cruise Booking Form</h3>
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="cruise-name">Full Name:</label>
+      <input type="text" id="cruise-name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cruise-destination">Cruise Destination:</label>
+      <select id="cruise-destination">
+        <option value="mediterranean">Mediterranean</option>
+        <option value="caribbean">Caribbean</option>
+        <option value="alaska">Alaska</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="cruise-date">Departure Date:</label>
+      <input type="date" id="cruise-date" required>
+    </div>
+
+    <button type="submit" class="btn">Book Cruise</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; Let’s make your next trip unforgettable. 🌎 | © 2025 GlobalPathways. Travel smart, travel happy.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" target="_blank">
+        <img src="icons/facebook.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="icons/insta.png" alt="Instagram">
+      </a>
+      <a href="https://wa.me/" target="_blank">
+        <img src="icons/whatsapp.png" alt="WhatsApp">
+      </a>
+        </div>
+</footer>
+
+</body>
+</html>
