@@ -2,8 +2,6 @@
 
 A clean, responsive multi-page travel website built using **HTML5** and **CSS3** only. Designed to showcase destinations, services, and booking forms for a fictional travel agency.
 
-![Screenshot](./images/screenshothomepage.png) 
-
 ---
 
 # 🌍 Global Travel Agency Website
@@ -52,8 +50,8 @@ global/
 
 ## 🧪 Technologies Used
 
-- **HTML5**: Semantic page structure, links, forms, media
-- **CSS3**: Styling, responsive layout (flexbox/grid), transitions, hover effects
+- **HTML**: Semantic page structure, links, forms, media
+- **CSS**: Styling, responsive layout (flexbox/grid), transitions, hover effects
 - **No JavaScript**: All interactions and visuals are handled with pure CSS
 
 ## 🎨 Design Overview
