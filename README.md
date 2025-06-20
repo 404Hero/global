@@ -2,7 +2,7 @@
 
 A clean, responsive multi-page travel website built using **HTML5** and **CSS3** only. Designed to showcase destinations, services, and booking forms for a fictional travel agency.
 
-![Screenshot](./images/screenshot-homepage.png) 
+![Screenshot](./images/bg.jpg) 
 
 ---
 
