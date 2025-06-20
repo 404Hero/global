@@ -80,14 +80,6 @@ global/
 2. Open `index.html` in your browser.  
    No setup or server required — it's a static site.
 
-## 📸 Screenshots
-
-
-```markdown
-![Home Page](./images/screenshothomepage.png)
-![Gallery Page](./images/screenshot-gallery.png)
-```
-
 ## 📜 License
 
 This project was built for educational purposes and personal learning.  
